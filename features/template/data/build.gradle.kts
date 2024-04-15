@@ -1,7 +1,7 @@
 plugins {
     alias(libs.plugins.ibrahimkurt.android.library)
     alias(libs.plugins.ibrahimkurt.android.hilt)
-    alias(libs.plugins.ibrahimkurt.retrofitSerialization)
+    alias(libs.plugins.ibrahimkurt.android.retrofitSerialization)
 }
 
 android {

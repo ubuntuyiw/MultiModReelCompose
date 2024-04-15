@@ -90,7 +90,6 @@ ibrahimkurt-android-compose = { id = "ibrahimkurt.android.compose", version = "u
 ibrahimkurt-jvm-library = { id = "ibrahimkurt.jvm.library", version = "unspecified" }
 ibrahimkurt-android-library = { id = "ibrahimkurt.android.library", version = "unspecified" }
 ibrahimkurt-android-library-compose = { id = "ibrahimkurt.android.library.compose", version = "unspecified" }
-ibrahimkurt-uiSetup = { id = "ibrahimkurt.android.ui-setup", version = "unspecified" }
-ibrahimkurt-retrofitSerialization = { id = "ibrahimkurt.retrofit-serialization", version = "unspecified" }
-ibrahimkurt-network= { id = "ibrahimkurt.network", version = "unspecified" }
-ibrahimkurt-detekt = { id = "ibrahimkurt.detekt", version = "unspecified" }
+ibrahimkurt-android-uiSetup = { id = "ibrahimkurt.android.ui-setup", version = "unspecified" }
+ibrahimkurt-android-retrofitSerialization = { id = "ibrahimkurt.android.retrofit-serialization", version = "unspecified" }
+ibrahimkurt-jvm-detekt = { id = "ibrahimkurt.jvm.detekt", version = "unspecified" }

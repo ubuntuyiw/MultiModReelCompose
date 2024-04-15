@@ -47,7 +47,7 @@ gradlePlugin {
             implementationClass = "ApplicationPlugin"
         }
         register("detekt") {
-            id = "ibrahimkurt.detekt"
+            id = "ibrahimkurt.jvm.detekt"
             implementationClass = "DetektPlugin"
         }
         register("jvmLibrary") {
@@ -55,7 +55,7 @@ gradlePlugin {
             implementationClass = "JvmLibraryPlugin"
         }
         register("retrofitSerialization") {
-            id = "ibrahimkurt.retrofit-serialization"
+            id = "ibrahimkurt.android.retrofit-serialization"
             implementationClass = "RetrofitSerializationPlugin"
         }
         register("UISetup") {

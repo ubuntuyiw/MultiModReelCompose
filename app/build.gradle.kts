@@ -1,7 +1,7 @@
 plugins {
     alias(libs.plugins.ibrahimkurt.android.application)
     alias(libs.plugins.ibrahimkurt.android.compose)
-    alias(libs.plugins.ibrahimkurt.uiSetup)
+    alias(libs.plugins.ibrahimkurt.android.uiSetup)
 
 }
 
