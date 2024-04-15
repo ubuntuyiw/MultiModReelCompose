@@ -1,5 +1,6 @@
 plugins {
     alias(libs.plugins.ibrahimkurt.android.library)
+    alias(libs.plugins.ibrahimkurt.android.library.compose)
     alias(libs.plugins.ibrahimkurt.uiSetup)
 }
 
@@ -9,4 +10,5 @@ android {
 
 dependencies {
     implementation(projects.core.domain)
+    api(projects.core.component)
 }
