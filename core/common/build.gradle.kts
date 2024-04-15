@@ -1,6 +1,6 @@
 plugins {
-    alias(libs.plugins.android.library)
-    alias(libs.plugins.jetbrains.kotlin.android)
+    alias(libs.plugins.ibrahimkurt.android.library)
+    alias(libs.plugins.ibrahimkurt.android.hilt)
 }
 
 android {
