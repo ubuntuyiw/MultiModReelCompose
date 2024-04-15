@@ -20,6 +20,8 @@ retrofit = "2.11.0"
 retrofit2KotlinxSerializationConverter = "1.0.0"
 kotlinxSerializationJson = "1.6.3"
 detekt = "1.23.6"
+moduleGraph = "2.5.0"
+
 
 [libraries]
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
@@ -82,6 +84,8 @@ kotlin-serialization = { id = "org.jetbrains.kotlin.plugin.serialization", versi
 hilt = { id = "com.google.dagger.hilt.android", version.ref = "hilt" }
 ksp = { id = "com.google.devtools.ksp", version.ref = "ksp" }
 detekt = { id = "io.gitlab.arturbosch.detekt", version.ref = "detekt" }
+module-graph = { id = "com.jraska.module.graph.assertion", version.ref = "moduleGraph" }
+
 
 # Plugins defined by this project
 ibrahimkurt-android-application = { id = "ibrahimkurt.android.application", version = "unspecified" }
