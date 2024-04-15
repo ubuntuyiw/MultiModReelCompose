@@ -17,5 +17,4 @@ object HomeModule {
     fun provideNetworkService(retrofit: Retrofit): HomeApiService {
         return retrofit.create(HomeApiService::class.java)
     }
-
 }

@@ -15,5 +15,4 @@ abstract class BindsHomeModule {
     @Binds
     @ViewModelScoped
     abstract fun bindHomeRepository(impl: HomeRepositoryImpl): HomeRepository
-
 }

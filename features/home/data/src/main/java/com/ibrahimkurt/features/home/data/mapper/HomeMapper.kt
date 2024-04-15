@@ -1,9 +1,9 @@
 package com.ibrahimkurt.features.home.data.mapper
 
-import com.ibrahimkurt.features.home.domain.model.TvShow
-import com.ibrahimkurt.features.home.domain.model.TvShowList
 import com.ibrahimkurt.features.home.data.dto.ResultDto
 import com.ibrahimkurt.features.home.data.dto.TvShowResponseDto
+import com.ibrahimkurt.features.home.domain.model.TvShow
+import com.ibrahimkurt.features.home.domain.model.TvShowList
 
 fun TvShowResponseDto.toDomain(): TvShowList {
     return TvShowList(

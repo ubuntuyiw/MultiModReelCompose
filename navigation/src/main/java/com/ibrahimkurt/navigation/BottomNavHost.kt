@@ -7,7 +7,6 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import com.ibrahimkurt.features.home.ui.home
 
-
 internal fun NavGraphBuilder.bottomNavHost(bottomNavHost: NavHostController) {
     composable(route = "bottomNavHost") {
         BottomNavHost(bottomNavHost)

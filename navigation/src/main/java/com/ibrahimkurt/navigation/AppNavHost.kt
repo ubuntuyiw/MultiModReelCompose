@@ -10,6 +10,5 @@ fun AppNavHost() {
     val bottomNavHostController = rememberNavController()
     NavHost(navController = appNavHostController, startDestination = "bottomNavHost") {
         bottomNavHost(bottomNavHostController)
-
     }
 }

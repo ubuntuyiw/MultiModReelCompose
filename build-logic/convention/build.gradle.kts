@@ -20,6 +20,7 @@ tasks.withType<KotlinCompile>().configureEach {
 dependencies {
     compileOnly(libs.android.gradlePlugin)
     compileOnly(libs.kotlin.gradlePlugin)
+    compileOnly(libs.detekt.gradlePlugin)
 
 }
 
@@ -44,6 +45,10 @@ gradlePlugin {
         register("application") {
             id = "ibrahimkurt.android.application"
             implementationClass = "ApplicationPlugin"
+        }
+        register("detekt") {
+            id = "ibrahimkurt.detekt"
+            implementationClass = "DetektPlugin"
         }
         register("jvmLibrary") {
             id = "ibrahimkurt.jvm.library"

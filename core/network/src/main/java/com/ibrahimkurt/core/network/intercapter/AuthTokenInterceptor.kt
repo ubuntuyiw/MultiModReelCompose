@@ -9,9 +9,8 @@ import javax.inject.Inject
 
 class AuthTokenInterceptor @Inject constructor(
     private val authTokenManager: AuthTokenManager
-): Interceptor {
+) : Interceptor {
     override fun intercept(chain: Interceptor.Chain): Response {
-
         val original = chain.request()
         val requestBuilder = original.newBuilder()
             .header(HttpHeaders.Authorization, "${AuthScheme.Bearer} ${authTokenManager.accessToken}")

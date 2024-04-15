@@ -18,7 +18,7 @@ import javax.inject.Inject
 @Composable
 fun HomeRoute() {
     val viewModel: HomeViewModel = hiltViewModel()
-    Log.d("asdasd",viewModel.getHome().toString())
+    Log.d("asdasd", viewModel.getHome().toString())
     HomeScreen()
 }
 
@@ -36,15 +36,14 @@ fun HomePreview() {
 }
 
 @HiltViewModel
-class HomeViewModel @Inject constructor (
+class HomeViewModel @Inject constructor(
     private val getTvUseCase: GetTvUseCase
-): ViewModel() {
+) : ViewModel() {
 
     fun getHome() {
         viewModelScope.launch {
             val result = getTvUseCase.execute()
             Log.d("HomeViewModel", "getHome: $result")
-
         }
     }
 }

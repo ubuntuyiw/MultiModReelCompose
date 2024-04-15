@@ -7,6 +7,7 @@ plugins {
     alias(libs.plugins.ksp) apply false
     alias(libs.plugins.android.library) apply false
     alias(libs.plugins.kotlin.serialization) apply false
+    alias(libs.plugins.detekt) apply false
 }
 
 tasks.register("createFeatureModule") {
@@ -46,6 +47,14 @@ tasks.register("createFeatureModule") {
             updatePackagePaths("src/main/java/com/ibrahimkurt/features/template")
             updatePackagePaths("src/androidTest/java/com/ibrahimkurt/features/template")
             updatePackagePaths("src/test/java/com/ibrahimkurt/features/template")
+        }
+    }
+}
+
+tasks.register("printModulePaths") {
+    subprojects {
+        if (subprojects.size == 0) {
+            println(this.path)
         }
     }
 }
