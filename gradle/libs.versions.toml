@@ -62,7 +62,7 @@ ktor-client-okhttp = { group = "io.ktor", name = "ktor-client-okhttp", version.r
 
 #Chucker
 chucker = { group = "com.github.chuckerteam.chucker", name = "library", version.ref = "library" }
-chucker-no-op = { group = "com.github.chuckerteam.chucker", name = "library-no-op", version.ref = "libraryNoOp" }
+chuckerNoOp = { group = "com.github.chuckerteam.chucker", name = "library-no-op", version.ref = "libraryNoOp" }
 
 #build-logic
 android-gradlePlugin = { group = "com.android.tools.build", name = "gradle", version.ref = "agp" }

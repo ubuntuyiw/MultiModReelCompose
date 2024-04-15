@@ -34,7 +34,7 @@ android {
 }
 
 dependencies {
-
+    implementation(projects.core.network)
 
     implementation(libs.androidx.lifecycle.runtime.ktx)
     implementation(platform(libs.androidx.compose.bom))

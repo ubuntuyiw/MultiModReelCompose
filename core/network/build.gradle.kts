@@ -23,5 +23,9 @@ android {
 }
 
 dependencies {
-
+    implementation(projects.core.common)
+    debugImplementation(libs.chucker)
+    releaseImplementation(libs.chuckerNoOp)
+    implementation(libs.ktor.client.okhttp)
+    implementation(libs.retrofit2.kotlinx.serialization.converter)
 }
