@@ -1,6 +1,7 @@
 plugins {
     alias(libs.plugins.ibrahimkurt.android.application)
     alias(libs.plugins.ibrahimkurt.android.compose)
+    alias(libs.plugins.ibrahimkurt.uiSetup)
 }
 
 android {
@@ -35,8 +36,8 @@ android {
 
 dependencies {
     implementation(projects.core.network)
+    implementation(projects.navigation)
 
-    implementation(libs.androidx.lifecycle.runtime.ktx)
     implementation(platform(libs.androidx.compose.bom))
     implementation(libs.androidx.ui)
     implementation(libs.androidx.ui.graphics)

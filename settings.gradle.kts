@@ -23,6 +23,7 @@ dependencyResolutionManagement {
 rootProject.name = "MultiModReelCompose"
 include(":app")
 enableFeaturePreview("TYPESAFE_PROJECT_ACCESSORS")
+include(":navigation")
 include(":core:network")
 include(":core:common")
 include(":core:ui")
