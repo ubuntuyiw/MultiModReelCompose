@@ -24,3 +24,4 @@ rootProject.name = "MultiModReelCompose"
 include(":app")
 enableFeaturePreview("TYPESAFE_PROJECT_ACCESSORS")
 include(":core:network")
+include(":core:common")
