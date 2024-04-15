@@ -38,7 +38,9 @@ tasks.register("createFeatureModule") {
 
                 newPackageDir.walkTopDown().forEach { file ->
                     if (file.extension in listOf("kt", "java")) {
-                        val content = file.readText().replace("com.ibrahimkurt.features.template", "com.ibrahimkurt.features.$moduleName")
+                        val content = file.readText().replace(
+                            "com.ibrahimkurt.features.template",
+                            "com.ibrahimkurt.features.$moduleName")
                         file.writeText(content)
                     }
                 }

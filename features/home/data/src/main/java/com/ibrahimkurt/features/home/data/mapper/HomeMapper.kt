@@ -9,8 +9,8 @@ fun TvShowResponseDto.toDomain(): TvShowList {
     return TvShowList(
         page = page ?: 0,
         results = results?.map { it.toDomain() } ?: emptyList(),
-        totalPages = total_pages ?: 0,
-        totalResults = total_results ?: 0
+        totalPages = totalPages ?: 0,
+        totalResults = totalResults ?: 0
     )
 }
 
@@ -18,16 +18,16 @@ fun ResultDto.toDomain(): TvShow {
     return TvShow(
         id = id ?: 0,
         name = name ?: "",
-        originalLanguage = original_language ?: "",
-        originalName = original_name ?: "",
+        originalLanguage = originalLanguage ?: "",
+        originalName = originalName ?: "",
         overview = overview ?: "",
         popularity = popularity ?: 0.0,
-        backdropPath = backdrop_path ?: "",
-        firstAirDate = first_air_date ?: "",
-        genreIds = genre_ids ?: emptyList(),
-        originCountry = origin_country ?: emptyList(),
-        posterPath = poster_path ?: "",
-        voteAverage = vote_average ?: 0.0,
-        voteCount = vote_count ?: 0
+        backdropPath = backdropPath ?: "",
+        firstAirDate = firstAirDate ?: "",
+        genreIds = genreIds ?: emptyList(),
+        originCountry = originCountry ?: emptyList(),
+        posterPath = posterPath ?: "",
+        voteAverage = voteAverage ?: 0.0,
+        voteCount = voteCount ?: 0
     )
 }

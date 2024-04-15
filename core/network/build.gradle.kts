@@ -1,9 +1,12 @@
+import org.jetbrains.kotlin.konan.properties.Properties
 plugins {
     alias(libs.plugins.ibrahimkurt.android.library)
     alias(libs.plugins.ibrahimkurt.android.hilt)
     alias(libs.plugins.ibrahimkurt.android.retrofitSerialization)
 }
-
+val apiKey: String = Properties().apply {
+    rootProject.file("local.properties").reader().use { load(it) }
+}.getProperty("API_KEY")!!
 android {
     namespace = "com.ibrahimkurt.core.network"
 
@@ -15,9 +18,11 @@ android {
     buildTypes {
         getByName("debug") {
             buildConfigField("String", "BASE_URL", "\"https://api.themoviedb.org/3/\"")
+            buildConfigField("String", "API_KEY", "\"$apiKey\"")
         }
         getByName("release") {
             buildConfigField("String", "BASE_URL", "\"https://api.themoviedb.org/3/\"")
+            buildConfigField("String", "API_KEY", "\"$apiKey\"")
         }
     }
 }
