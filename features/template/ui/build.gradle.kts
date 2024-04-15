@@ -5,11 +5,9 @@ plugins {
 }
 
 android {
-    namespace = "com.ibrahimkurt.features.home.ui"
+    namespace = "com.ibrahimkurt.features.template.ui"
 }
 
 dependencies {
     implementation(projects.core.ui)
-    implementation(projects.features.home.domain)
-
 }
