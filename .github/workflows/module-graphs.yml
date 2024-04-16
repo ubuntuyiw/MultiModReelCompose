@@ -36,7 +36,7 @@ jobs:
 
       - name: Commit and Push Changes
         run: |
-          git config --global user.email "githubt@actions.com"
+          git config --global user.email "github@actions.com"
           git config --global user.name "Github Actions"
           git add .
           git commit -m "Update module graphs and READMEs" || echo "No changes to commit"
