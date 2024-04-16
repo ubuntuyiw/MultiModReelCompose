@@ -1,26 +1,28 @@
-name: Generate Graphs
+name: Android CI
 
 on:
   push:
-    branches: [ main ]
+    branches: [ "master" ]
   pull_request:
-    branches: [ main ]
+    branches: [ "master"]
 
 jobs:
-  generate-graphs:
+  build:
+
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v2
-
-      - name: Install Graphviz
-        run: sudo apt-get install graphviz
-
-      - name: Generate dependency graphs
-        run: bash ./generateModuleGraphs.sh
-
-      - name: Upload graphs
-        uses: actions/upload-artifact@v2
+      - uses: actions/checkout@v3
+      - name: set up JDK 17
+        uses: actions/setup-java@v3
         with:
-          name: graphs
-          path: docs/images/graphs/
+          java-version: '17'
+          distribution: 'temurin'
+          cache: gradle
+
+      - name: Grant execute permission for gradlew
+        run: chmod +x gradlew
+      - name: Build with Gradle
+        run: ./gradlew build
+      - name: Run unit tests
+        run: ./gradlew test
