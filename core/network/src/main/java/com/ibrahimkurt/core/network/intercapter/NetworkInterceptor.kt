@@ -1,8 +1,8 @@
 package com.ibrahimkurt.core.network.intercapter
 
 import android.content.Context
-import com.ibrahimkurt.core.network.util.NetworkUnavailableException
 import com.ibrahimkurt.core.network.extensions.isNetworkAvailable
+import com.ibrahimkurt.core.network.util.NetworkUnavailableException
 import okhttp3.Interceptor
 import okhttp3.Response
 

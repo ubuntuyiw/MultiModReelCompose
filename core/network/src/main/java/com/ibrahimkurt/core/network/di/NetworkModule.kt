@@ -1,6 +1,7 @@
 package com.ibrahimkurt.core.network.di
 
 import android.app.Application
+import android.content.Context
 import com.chuckerteam.chucker.api.ChuckerInterceptor
 import com.ibrahimkurt.core.network.BuildConfig
 import com.ibrahimkurt.core.network.calladapter.NetworkResultCallAdapterFactory
@@ -10,6 +11,7 @@ import com.jakewharton.retrofit2.converter.kotlinx.serialization.asConverterFact
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
+import dagger.hilt.android.qualifiers.ApplicationContext
 import dagger.hilt.components.SingletonComponent
 import kotlinx.serialization.json.Json
 import okhttp3.MediaType.Companion.toMediaType
@@ -40,6 +42,11 @@ internal object NetworkModule {
     @Singleton
     fun provideChuckInterceptor(application: Application): ChuckerInterceptor =
         ChuckerInterceptor.Builder(application).build()
+
+    @Provides
+    @Singleton
+    fun provideNetworkInterceptor(@ApplicationContext context: Context): NetworkInterceptor =
+        NetworkInterceptor(context)
 
     @Provides
     @Singleton

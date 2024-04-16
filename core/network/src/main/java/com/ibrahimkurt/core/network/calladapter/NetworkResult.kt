@@ -7,5 +7,9 @@ import com.ibrahimkurt.core.network.R
 sealed interface NetworkResult<out T> {
     data class Success<T>(val data: T) : NetworkResult<T>
 
-    data class Error<T>(val error: String = EMPTY_STRING, @StringRes val resError: Int = R.string.error_unknown) : NetworkResult<T>
+    data class Error<T>(
+        val error: String = EMPTY_STRING,
+        @StringRes
+        val resError: Int = R.string.error_unknown
+    ) : NetworkResult<T>
 }

@@ -1,6 +1,5 @@
 package com.ibrahimkurt.core.network.calladapter
 
-
 import com.ibrahimkurt.core.network.util.ErrorCategory
 import com.ibrahimkurt.core.network.util.NetworkUnavailableException
 import okhttp3.Request
@@ -27,7 +26,7 @@ class NetworkResultCall<T : Any>(
                 val networkResult: NetworkResult<T> =
                     if (t is NetworkUnavailableException) {
                         NetworkResult.Error(resError = ErrorCategory.NetworkUnavailable.message)
-                    } else{
+                    } else {
                         NetworkResult.Error(resError = ErrorCategory.UnknownError.message)
                     }
                 callback.onResponse(this@NetworkResultCall, Response.success(networkResult))
@@ -52,7 +51,7 @@ class NetworkResultCall<T : Any>(
                 } else {
                     val errorBody = JSONObject(response.errorBody()?.string() ?: "{}")
                     val message = errorBody.getString("status_message")
-                    NetworkResult.Error(error =  message)
+                    NetworkResult.Error(error = message)
                 }
             }
         } catch (e: SocketTimeoutException) {
