@@ -19,7 +19,7 @@ class AndroidLibraryPlugin : Plugin<Project> {
             extensions.configure<LibraryExtension>() {
                 compileSdk = 34
                 defaultConfig {
-                    minSdk = 21
+                    minSdk = 23
                 }
 
 

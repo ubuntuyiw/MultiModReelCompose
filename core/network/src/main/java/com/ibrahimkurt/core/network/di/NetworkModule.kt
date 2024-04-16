@@ -3,7 +3,9 @@ package com.ibrahimkurt.core.network.di
 import android.app.Application
 import com.chuckerteam.chucker.api.ChuckerInterceptor
 import com.ibrahimkurt.core.network.BuildConfig
+import com.ibrahimkurt.core.network.calladapter.NetworkResultCallAdapterFactory
 import com.ibrahimkurt.core.network.intercapter.AuthTokenInterceptor
+import com.ibrahimkurt.core.network.intercapter.NetworkInterceptor
 import com.jakewharton.retrofit2.converter.kotlinx.serialization.asConverterFactory
 import dagger.Module
 import dagger.Provides
@@ -43,10 +45,12 @@ internal object NetworkModule {
     @Singleton
     fun provideOkHttpClient(
         chuckInterceptor: ChuckerInterceptor,
-        authTokenInterceptor: AuthTokenInterceptor
+        authTokenInterceptor: AuthTokenInterceptor,
+        networkInterceptor: NetworkInterceptor
     ): OkHttpClient {
         return OkHttpClient.Builder().apply {
             if (BuildConfig.DEBUG) addInterceptor(chuckInterceptor)
+            addInterceptor(networkInterceptor)
             addInterceptor(authTokenInterceptor)
             readTimeout(60L, TimeUnit.SECONDS)
             connectTimeout(60L, TimeUnit.SECONDS)
@@ -59,6 +63,7 @@ internal object NetworkModule {
     fun provideRetrofit(okHttpClient: OkHttpClient, json: Json): Retrofit = Retrofit.Builder()
         .baseUrl(BuildConfig.BASE_URL)
         .addConverterFactory(json.asConverterFactory("application/json".toMediaType()))
+        .addCallAdapterFactory(NetworkResultCallAdapterFactory.create())
         .client(okHttpClient)
         .build()
 }

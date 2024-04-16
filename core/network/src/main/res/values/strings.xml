@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="error_unknown">Bilinmeyen bir hata oluştu, bir süre sonra tekrar deneyiniz.</string>
+    <string name="error_system">Şu an sistemlerimizde bir problem var, bir süre sonra tekrar deneyiniz.</string>
+    <string name="error_check_internet">Lütfen internet bağlantınızı kontrol ediniz.</string>
+    <string name="error_not_found">Bulunamadı.</string>
+    <string name="error_response_not_received">Cevap alınamadı lütfen tekrar deneyin.</string>
+</resources>
