@@ -40,7 +40,9 @@ jobs:
           git config --global user.name "GitHub Actions"
           git add .
           git commit -m "Update module graphs and READMEs" || echo "No changes to commit"
-          git push --set-upstream https://${{ secrets.PERSONAL_TOKEN }}@github.com/OWNER/REPO.git HEAD:master
+          git push --set-upstream https://${{ secrets.PERSONAL_TOKEN }}@github.com/ubuntuyiw/MultiModReelCompose.git HEAD:master
+        env:
+          GITHUB_TOKEN: ${{ secrets.PERSONAL_TOKEN }}
 
       - name: Upload Graphs
         uses: actions/upload-artifact@v3
