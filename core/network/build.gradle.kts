@@ -4,9 +4,13 @@ plugins {
     alias(libs.plugins.ibrahimkurt.android.hilt)
     alias(libs.plugins.ibrahimkurt.android.retrofitSerialization)
 }
-val apiKey: String = Properties().apply {
-    rootProject.file("local.properties").reader().use { load(it) }
-}.getProperty("API_KEY")!!
+val localProperties = Properties().apply {
+    val localPropertiesFile = rootProject.file("local.properties")
+    if (localPropertiesFile.exists()) {
+        localPropertiesFile.reader().use { load(it) }
+    }
+}
+val apiKey = localProperties.getProperty("API_KEY") ?: System.getenv("API_KEY")
 android {
     namespace = "com.ibrahimkurt.core.network"
 
