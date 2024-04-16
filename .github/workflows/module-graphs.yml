@@ -14,7 +14,8 @@ jobs:
     steps:
       - uses: actions/checkout@v3
         with:
-          persist-credentials: true
+          token: ${{ secrets.MY_PERSONAL_TOKEN }}
+          persist-credentials: false
 
       - name: Set up JDK 17
         uses: actions/setup-java@v3
@@ -35,12 +36,12 @@ jobs:
 
       - name: Commit and Push Changes
         run: |
-          git config --global user.email "githubt@actions.com"
-          git config --global user.name "Github"
+          git config user.email "githubt@actions.com"
+          git config user.name "Github"
           git add docs/images/graphs/
           git add **/README.md
           git commit -m "Update module graphs and READMEs" || echo "No changes to commit"
-          git push
+          git push origin HEAD:master --force # Burada PAT kullanarak push yapılıyor
 
       - name: Upload Graphs
         uses: actions/upload-artifact@v3
