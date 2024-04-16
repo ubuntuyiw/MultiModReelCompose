@@ -1,5 +1,6 @@
 package com.ibrahimkurt.core.network.calladapter
 
+import com.ibrahimkurt.core.common.network.NetworkResult
 import retrofit2.Call
 import retrofit2.CallAdapter
 import java.lang.reflect.Type
