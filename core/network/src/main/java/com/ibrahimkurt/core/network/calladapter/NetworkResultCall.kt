@@ -1,5 +1,6 @@
 package com.ibrahimkurt.core.network.calladapter
 
+import com.ibrahimkurt.core.common.network.NetworkResult
 import com.ibrahimkurt.core.network.util.ErrorCategory
 import com.ibrahimkurt.core.network.util.NetworkUnavailableException
 import okhttp3.Request
