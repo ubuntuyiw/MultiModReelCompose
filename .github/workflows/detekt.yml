@@ -1,0 +1,38 @@
+name: Detekt Static Code Analysis
+
+on:
+  push:
+    branches: [ "master" ]
+  pull_request:
+    branches: [ "master"]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v3
+      - name: set up JDK 17
+        uses: actions/setup-java@v3
+        with:
+          java-version: '17'
+          distribution: 'temurin'
+          cache: gradle
+
+      - name: Set up environment variables
+        run: |
+          echo "SDK_DIR=${{ secrets.SDK_DIR }}" >> $GITHUB_ENV
+          echo "API_KEY=${{ secrets.API_KEY }}" >> $GITHUB_ENV
+
+      - name: Run Detekt and generate reports
+        run: |
+          chmod +x gradlew
+          ./gradlew detekt --config path/to/your/detekt.yml --report xml:path/to/your/reports/detekt.xml --report html:path/to/your/reports/detekt.html
+      - name: Upload Detekt reports
+        uses: actions/upload-artifact@v3
+        with:
+          name: detekt-reports
+          path: |
+            path/to/your/reports/detekt.xml
+            path/to/your/reports/detekt.html
