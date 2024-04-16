@@ -16,7 +16,6 @@ jobs:
         with:
           token: ${{ secrets.PERSONAL_TOKEN }}
           persist-credentials: false
-          fetch-depth: 0  # Tüm geçmişi çekmek için
 
       - name: Set up JDK 17
         uses: actions/setup-java@v3
@@ -37,7 +36,7 @@ jobs:
 
       - name: Create new branch or switch to it if it already exists
         run: |
-          git checkout -b new-branch || git checkout new-branch
+          git checkout -b github/module-graph || git checkout github/module-graph
 
       - name: Commit and Push Changes
         run: |
@@ -45,7 +44,7 @@ jobs:
           git config --global user.name "GitHub Actions"
           git add .
           git commit -m "Update module graphs and READMEs" || echo "No changes to commit"
-          git push --set-upstream origin new-branch
+          git push --set-upstream https://${{ secrets.PERSONAL_TOKEN }}@github.com/ubuntuyiw/MultiModReelCompose.git github/module-graph
         env:
           GITHUB_TOKEN: ${{ secrets.PERSONAL_TOKEN }}
 
