@@ -41,9 +41,8 @@ jobs:
           git add .
           git commit -m "Update module graphs and READMEs" || echo "No changes to commit"
           git push --set-upstream https://${{ secrets.PERSONAL_TOKEN }}@github.com/OWNER/REPO.git HEAD:master
-          
-          
-          - name: Upload Graphs
+
+      - name: Upload Graphs
         uses: actions/upload-artifact@v3
         with:
           name: module-graphs
