@@ -1,0 +1,26 @@
+name: Generate Graphs
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  generate-graphs:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Install Graphviz
+        run: sudo apt-get install graphviz
+
+      - name: Generate dependency graphs
+        run: bash ./generateModuleGraphs.sh
+
+      - name: Upload graphs
+        uses: actions/upload-artifact@v2
+        with:
+          name: graphs
+          path: docs/images/graphs/
