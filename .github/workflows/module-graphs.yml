@@ -1,10 +1,10 @@
 name: Generate Module Graphs and Commit
 
 on:
-  push:
-    branches: [ "master" ]
   pull_request:
     branches: [ "master"]
+    branches-ignore:
+      - module-graph
 
 jobs:
   build:
