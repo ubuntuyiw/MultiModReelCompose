@@ -3,13 +3,11 @@ name: Detekt Static Code Analysis
 on:
   pull_request:
     branches: [ "master" ]
-    branches-ignore:
-      - module-graph
 
 jobs:
   detekt:
     runs-on: ubuntu-latest
-
+    if: github.head_ref != 'module-graph'
     steps:
       - uses: actions/checkout@v3
 

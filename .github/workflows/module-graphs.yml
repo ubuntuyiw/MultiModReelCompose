@@ -3,14 +3,12 @@ name: Generate Module Graphs and Commit
 on:
   pull_request:
     branches: [ "master"]
-    branches-ignore:
-      - module-graph
 
 jobs:
   build:
 
     runs-on: ubuntu-latest
-
+    if: github.head_ref != 'module-graph'
     steps:
       - uses: actions/checkout@v3
         with:
