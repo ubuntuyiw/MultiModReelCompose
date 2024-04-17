@@ -32,7 +32,7 @@ android {
 }
 
 dependencies {
-    implementation(projects.core.common)
+    api(projects.core.common)
     debugImplementation(libs.chucker)
     releaseImplementation(libs.chuckerNoOp)
     implementation(libs.ktor.client.okhttp)

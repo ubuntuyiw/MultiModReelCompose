@@ -10,7 +10,7 @@ android {
 
 dependencies {
     implementation(projects.core.domain)
-    implementation(projects.core.common)
+    api(projects.core.common)
     api(projects.core.network)
 
     implementation(libs.androidx.paging3)
