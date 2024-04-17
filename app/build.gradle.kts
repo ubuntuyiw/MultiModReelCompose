@@ -40,4 +40,7 @@ dependencies {
     implementation(projects.navigation)
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.activity.compose)
+
+    implementation(projects.features.home.data)
+
 }

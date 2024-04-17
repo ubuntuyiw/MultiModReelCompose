@@ -14,5 +14,4 @@ dependencies {
     implementation(libs.androidx.navigation.compose)
 
     implementation(projects.features.home.ui)
-    implementation(projects.features.home.data)
 }

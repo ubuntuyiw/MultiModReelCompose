@@ -1,7 +1,7 @@
 package com.ibrahimkurt.features.home.data.source
 
+import com.ibrahimkurt.core.network.calladapter.NetworkResult
 import com.ibrahimkurt.features.home.data.dto.TvShowResponseDto
-import retrofit2.Response
 import retrofit2.http.GET
 import retrofit2.http.Query
 
@@ -13,5 +13,5 @@ interface HomeApiService {
         @Query("language") language: String = "en-US",
         @Query("page") page: Int = 1,
         @Query("sort_by") sortBy: String = "popularity.desc"
-    ): Response<TvShowResponseDto>
+    ): NetworkResult<TvShowResponseDto>
 }
