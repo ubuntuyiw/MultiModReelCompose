@@ -6,7 +6,7 @@ on:
 
 jobs:
   prepare:
-    uses: ./.github/workflows/setup-java.yml
+    uses: ./.github/workflows/setup-environment.yml
   build:
 
     runs-on: ubuntu-latest

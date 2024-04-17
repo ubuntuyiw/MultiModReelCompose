@@ -5,8 +5,9 @@ on:
     branches: [ "master" ]
 
 jobs:
+  prepare:
+    uses: ./.github/workflows/setup-environment.yml
   build:
-
     runs-on: ubuntu-latest
     if: ${{ github.event.pull_request.head.ref != 'github/module-graph' }}
     steps:
