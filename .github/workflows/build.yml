@@ -3,8 +3,6 @@ name: Android CI
 on:
   pull_request:
     branches: [ "master" ]
-    branches-ignore:
-      - module-graph
 
 jobs:
   build:
