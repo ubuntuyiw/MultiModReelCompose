@@ -3,7 +3,6 @@ name: Detekt Static Code Analysis
 on:
   pull_request:
     branches: [ "master" ]
-    branches-ignore: [ "module-graph" ]
 
 jobs:
   detekt:
