@@ -5,6 +5,8 @@ on:
     branches: [ "master"]
 
 jobs:
+  prepare:
+    uses: ./.github/workflows/setup-java.yml
   build:
 
     runs-on: ubuntu-latest
@@ -14,12 +16,6 @@ jobs:
         with:
           token: ${{ secrets.PERSONAL_TOKEN }}
           persist-credentials: true
-
-      - name: Set up JDK 17
-        uses: actions/setup-java@v3
-        with:
-          java-version: '17'
-          distribution: 'temurin'
 
       - name: Install Graphviz
         run: sudo apt-get install graphviz
