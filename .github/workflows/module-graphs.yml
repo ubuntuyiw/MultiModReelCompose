@@ -34,6 +34,12 @@ jobs:
           chmod +x ./generateModuleGraphs.sh
           ./generateModuleGraphs.sh
 
+      - name: Check if branch exists and delete it
+        run: |
+          if git ls-remote --heads https://github.com/ubuntuyiw/MultiModReelCompose.git github/module-graph | grep -q 'refs/heads/github/module-graph'; then
+            git push origin --delete github/module-graph
+          fi
+
       - name: Create new branch or switch to it if it already exists
         run: |
           git checkout -b github/module-graph || git checkout github/module-graph
