@@ -2,11 +2,10 @@ name: Generate Module Graphs and Commit
 
 on:
   pull_request:
-    branches: [ "master"]
+    branches: [ "master" ]
 
 jobs:
   build:
-
     runs-on: ubuntu-latest
     if: ${{ github.event.pull_request.head.ref != 'github/module-graph' }}
     steps:
@@ -14,12 +13,7 @@ jobs:
         with:
           token: ${{ secrets.PERSONAL_TOKEN }}
           persist-credentials: true
-
-      - name: Set up JDK 17
-        uses: actions/setup-java@v3
-        with:
-          java-version: '17'
-          distribution: 'temurin'
+          fetch-depth: 0
 
       - name: Install Graphviz
         run: sudo apt-get install graphviz
@@ -32,15 +26,15 @@ jobs:
           chmod +x ./generateModuleGraphs.sh
           ./generateModuleGraphs.sh
 
-      - name: Check if branch exists and delete it
+      - name: Create new branch or update it from master
         run: |
           if git ls-remote --heads https://github.com/ubuntuyiw/MultiModReelCompose.git github/module-graph | grep -q 'refs/heads/github/module-graph'; then
-            git push origin --delete github/module-graph
+            git fetch origin
+            git checkout github/module-graph
+            git merge origin/master
+          else
+            git checkout -b github/module-graph origin/master
           fi
-
-      - name: Create new branch or switch to it if it already exists
-        run: |
-          git checkout -b github/module-graph || git checkout github/module-graph
 
       - name: Commit and Push Changes
         run: |
