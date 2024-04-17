@@ -3,6 +3,7 @@ name: Generate Module Graphs and Commit
 on:
   pull_request:
     branches: [ "master"]
+    branches-ignore: [ "module-graph" ]
 
 jobs:
   build:
