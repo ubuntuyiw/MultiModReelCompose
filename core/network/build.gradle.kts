@@ -37,4 +37,6 @@ dependencies {
     releaseImplementation(libs.chuckerNoOp)
     implementation(libs.ktor.client.okhttp)
     implementation(libs.retrofit2.kotlinx.serialization.converter)
+    implementation(libs.coil)
+    implementation(libs.coilSvg)
 }

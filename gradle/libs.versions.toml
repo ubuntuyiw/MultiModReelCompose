@@ -2,25 +2,27 @@
 agp = "8.4.0-rc02"
 hiltNavigationCompose = "1.2.0"
 kotlin = "1.9.23"
-coreKtx = "1.12.0"
+coreKtx = "1.13.0"
 kotlinxSerializationCoreJvm = "1.6.3"
 ktorClientOkhttp = "2.3.5"
 library = "4.0.0"
 libraryNoOp = "4.0.0"
-activityCompose = "1.9.0-rc01"
-composeBom = "2024.04.00"
+activityCompose = "1.9.0"
+composeBom = "2024.04.01"
 jetbrainsKotlinJvm = "1.9.23"
 hilt = "2.51.1"
 ksp = "1.9.23-1.0.19"
-androidxComposeCompiler = "1.5.11"
+androidxComposeCompiler = "1.5.12"
 androidxLifecycle = "2.7.0"
 navigationCompose = "2.7.7"
 pagingRuntimeKtx = "3.2.1"
+pagingCompose = "3.3.0-beta01"
 retrofit = "2.11.0"
 retrofit2KotlinxSerializationConverter = "1.0.0"
 kotlinxSerializationJson = "1.6.3"
 detekt = "1.23.6"
 moduleGraph = "2.5.0"
+coil = "2.6.0"
 
 
 [libraries]
@@ -34,6 +36,7 @@ androidx-ui-graphics = { group = "androidx.compose.ui", name = "ui-graphics" }
 androidx-ui-tooling = { group = "androidx.compose.ui", name = "ui-tooling" }
 androidx-ui-tooling-preview = { group = "androidx.compose.ui", name = "ui-tooling-preview" }
 androidx-material3 = { group = "androidx.compose.material3", name = "material3" }
+androidx-compose-material-iconsExtended = { group = "androidx.compose.material", name = "material-icons-extended" }
 
 #Lifecycle Scopes
 androidx-lifecycle-runtimeCompose = { group = "androidx.lifecycle", name = "lifecycle-runtime-compose", version.ref = "androidxLifecycle" }
@@ -51,6 +54,13 @@ androidx-hilt-navigation-compose = { group = "androidx.hilt", name = "hilt-navig
 
 #Paging3
 androidx-paging3 = { group = "androidx.paging", name = "paging-runtime-ktx", version.ref = "pagingRuntimeKtx" }
+androidx-paging3Common = { group = "androidx.paging", name = "paging-common", version.ref = "pagingRuntimeKtx" }
+androidx-paging3Compose = { group = "androidx.paging", name = "paging-compose", version.ref = "pagingCompose" }
+
+#Coil
+coil = { group = "io.coil-kt", name = "coil", version.ref = "coil" }
+coilCompose = { group = "io.coil-kt", name = "coil-compose", version.ref = "coil" }
+coilSvg = { group = "io.coil-kt", name = "coil-svg", version.ref = "coil" }
 
 #Retrofit
 retrofit-core = { group = "com.squareup.retrofit2", name = "retrofit", version.ref = "retrofit" }

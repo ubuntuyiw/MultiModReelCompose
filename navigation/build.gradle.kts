@@ -1,6 +1,7 @@
 plugins {
     alias(libs.plugins.ibrahimkurt.android.library)
     alias(libs.plugins.ibrahimkurt.android.library.compose)
+    alias(libs.plugins.ibrahimkurt.android.uiSetup)
 
 }
 
@@ -12,6 +13,7 @@ android {
 dependencies {
 
     implementation(libs.androidx.navigation.compose)
+    implementation(projects.core.component)
 
     implementation(projects.features.home.ui)
 }
