@@ -1,14 +1,13 @@
 plugins {
-    alias(libs.plugins.ibrahimkurt.android.library)
-    alias(libs.plugins.ibrahimkurt.android.hilt)
+    alias(libs.plugins.ibrahimkurt.jvm.library)
 }
 
-android {
-    namespace = "com.ibrahimkurt.core.domain"
-
-}
+group = "com.ibrahimkurt.core.domain"
 
 dependencies {
     api(projects.core.common)
+    implementation(libs.javax.inject)
+    implementation(libs.kotlinx.coroutines.core)
+
 
 }

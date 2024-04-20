@@ -1,11 +1,9 @@
 plugins {
-    alias(libs.plugins.ibrahimkurt.android.library)
-    alias(libs.plugins.ibrahimkurt.android.hilt)
+    alias(libs.plugins.ibrahimkurt.jvm.library)
 }
 
-android {
-    namespace = "com.ibrahimkurt.core.common"
-}
+group = "com.ibrahimkurt.core.common"
+
 
 dependencies {
 
