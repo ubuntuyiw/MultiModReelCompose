@@ -1,9 +1,18 @@
 package com.ibrahimkurt.core.common.util
 
-import android.content.res.Resources
-import androidx.annotation.StringRes
-import com.ibrahimkurt.core.common.R
 import com.ibrahimkurt.core.common.util.Constants.EMPTY_STRING
+
+
+interface ResourceProvider {
+    fun getString(resourceId: Int): String
+}
+
+data class ErrorMessage(
+    val message: String = EMPTY_STRING,
+    val resourceId: Int? = null
+)
+
+
 
 sealed interface Resource<out T> {
     data class Success<T>(val data: T) : Resource<T> {
@@ -15,19 +24,13 @@ sealed interface Resource<out T> {
         }
     }
 
-    data class Error<T>(
-        internal val message: String = EMPTY_STRING,
-        @StringRes
-        internal val stringRes: Int = R.string.error_unknown,
-    ) : Resource<T> {
-        fun getErrorMessage(resources: Resources): String {
-            return this.message.ifBlank {
-                resources.getString(this.stringRes)
-            }
+    data class Error<T>(val error: ErrorMessage) : Resource<T> {
+        fun getErrorMessage(resourceProvider: ResourceProvider): String {
+            return error.message.ifBlank { error.resourceId?.let { resourceProvider.getString(it) } ?: "Unknown error" }
         }
 
         fun toPagingException(): PagingException {
-            return PagingException(this.message, this.stringRes)
+            return PagingException(error.message, error.resourceId ?: 0)
         }
     }
 }
@@ -35,6 +38,6 @@ sealed interface Resource<out T> {
 suspend fun <T : Any, N : Any> Resource<T>.map(data: suspend (T) -> N): Resource<N> {
     return when (this) {
         is Resource.Success -> Resource.Success(data(this.data))
-        is Resource.Error -> Resource.Error(this.message, this.stringRes)
+        is Resource.Error -> Resource.Error(this.error)
     }
 }

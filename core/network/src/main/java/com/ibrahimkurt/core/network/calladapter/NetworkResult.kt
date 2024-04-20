@@ -1,8 +1,7 @@
 package com.ibrahimkurt.core.network.calladapter
 
-import androidx.annotation.StringRes
-import com.ibrahimkurt.core.common.R
 import com.ibrahimkurt.core.common.util.Constants.EMPTY_STRING
+import com.ibrahimkurt.core.common.util.ErrorMessage
 import com.ibrahimkurt.core.common.util.Resource
 
 sealed interface NetworkResult<out T> {
@@ -10,8 +9,7 @@ sealed interface NetworkResult<out T> {
 
     data class Error<T>(
         val error: String = EMPTY_STRING,
-        @StringRes
-        val resError: Int = R.string.error_unknown
+        val resError: Int? = null
     ) : NetworkResult<T>
 }
 
@@ -19,8 +17,7 @@ fun <T> NetworkResult<T>.toResource(): Resource<T> {
     return when (this) {
         is NetworkResult.Success -> Resource.Success(data)
         is NetworkResult.Error -> Resource.Error(
-            message = error,
-            stringRes = resError
+            ErrorMessage(message = error, resourceId = resError)
         )
     }
 }

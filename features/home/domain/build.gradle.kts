@@ -1,14 +1,13 @@
 plugins {
-    alias(libs.plugins.ibrahimkurt.android.library)
-    alias(libs.plugins.ibrahimkurt.android.hilt)
+    alias(libs.plugins.ibrahimkurt.jvm.library)
 
 }
+group = "com.ibrahimkurt.features.home.domain"
 
-android {
-    namespace = "com.ibrahimkurt.features.home.domain"
-}
 
 dependencies {
     implementation(projects.core.domain)
-    implementation(projects.core.pagination)
+    implementation(libs.javax.inject)
+    implementation(libs.kotlinx.coroutines.core)
+    implementation(libs.kotlinx.paging3Common)
 }
