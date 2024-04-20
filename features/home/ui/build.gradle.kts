@@ -11,5 +11,5 @@ android {
 dependencies {
     implementation(projects.core.ui)
     implementation(projects.features.home.domain)
-
+    implementation(libs.androidx.paging3Compose)
 }

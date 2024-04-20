@@ -13,5 +13,4 @@ dependencies {
     api(projects.core.common)
     api(projects.core.network)
 
-    implementation(libs.androidx.paging3)
 }

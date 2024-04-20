@@ -2,6 +2,9 @@ package com.ibrahimkurt.core.network.di
 
 import android.app.Application
 import android.content.Context
+import coil.ImageLoader
+import coil.decode.SvgDecoder
+import coil.util.DebugLogger
 import com.chuckerteam.chucker.api.ChuckerInterceptor
 import com.ibrahimkurt.core.network.BuildConfig
 import com.ibrahimkurt.core.network.calladapter.NetworkResultCallAdapterFactory
@@ -14,6 +17,7 @@ import dagger.hilt.InstallIn
 import dagger.hilt.android.qualifiers.ApplicationContext
 import dagger.hilt.components.SingletonComponent
 import kotlinx.serialization.json.Json
+import okhttp3.Call
 import okhttp3.MediaType.Companion.toMediaType
 import okhttp3.OkHttpClient
 import retrofit2.Retrofit
@@ -53,7 +57,7 @@ internal object NetworkModule {
     fun provideOkHttpClient(
         chuckInterceptor: ChuckerInterceptor,
         authTokenInterceptor: AuthTokenInterceptor,
-        networkInterceptor: NetworkInterceptor
+        networkInterceptor: NetworkInterceptor,
     ): OkHttpClient {
         return OkHttpClient.Builder().apply {
             if (BuildConfig.DEBUG) addInterceptor(chuckInterceptor)
@@ -73,4 +77,34 @@ internal object NetworkModule {
         .addCallAdapterFactory(NetworkResultCallAdapterFactory.create())
         .client(okHttpClient)
         .build()
+
+    @Provides
+    @Singleton
+    fun okHttpCallFactory(
+        chuckInterceptor: ChuckerInterceptor
+    ): Call.Factory {
+        return OkHttpClient.Builder()
+            .apply {
+                if (BuildConfig.DEBUG) addInterceptor(chuckInterceptor)
+            }
+            .build()
+    }
+
+    @Provides
+    @Singleton
+    fun imageLoader(
+        okHttpCallFactory: Call.Factory,
+        @ApplicationContext application: Context,
+    ): ImageLoader {
+        return ImageLoader.Builder(application)
+            .callFactory(okHttpCallFactory)
+            .components { add(SvgDecoder.Factory()) }
+            .respectCacheHeaders(false)
+            .apply {
+                if (BuildConfig.DEBUG) {
+                    logger(DebugLogger())
+                }
+            }
+            .build()
+    }
 }

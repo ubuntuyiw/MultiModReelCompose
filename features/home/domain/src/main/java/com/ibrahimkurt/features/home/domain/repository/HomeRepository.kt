@@ -1,8 +1,9 @@
 package com.ibrahimkurt.features.home.domain.repository
 
-import com.ibrahimkurt.core.common.util.Resource
-import com.ibrahimkurt.features.home.domain.model.TvShowList
+import androidx.paging.PagingData
+import com.ibrahimkurt.features.home.domain.model.TvShow
+import kotlinx.coroutines.flow.Flow
 
 interface HomeRepository {
-    suspend fun getHome(): Resource<TvShowList?>
+    fun getHome(): Flow<PagingData<TvShow>>
 }

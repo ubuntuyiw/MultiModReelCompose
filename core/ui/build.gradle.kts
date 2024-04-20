@@ -12,4 +12,6 @@ dependencies {
     implementation(projects.core.domain)
     api(projects.core.component)
     api(projects.core.common)
+    implementation(libs.coil)
+    implementation(libs.coilCompose)
 }

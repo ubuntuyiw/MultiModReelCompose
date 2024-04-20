@@ -42,5 +42,6 @@ dependencies {
     implementation(libs.androidx.activity.compose)
 
     implementation(projects.features.home.data)
+    implementation(libs.coil)
 
 }
