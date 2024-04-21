@@ -12,8 +12,6 @@ data class ErrorMessage(
     val resourceId: Int? = null
 )
 
-
-
 sealed interface Resource<out T> {
     data class Success<T>(val data: T) : Resource<T> {
         suspend fun<T : Any, N : Any> Resource<T>.getDataOrNull(dataCallBack: suspend (T) -> N?): N? {
