@@ -10,7 +10,7 @@ import dagger.hilt.android.scopes.ViewModelScoped
 
 @Module
 @InstallIn(ViewModelComponent::class)
-abstract class DetailBindsModule {
+internal abstract class DetailBindsModule {
 
     @Binds
     @ViewModelScoped
