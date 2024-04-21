@@ -16,4 +16,5 @@ dependencies {
     implementation(projects.core.component)
 
     implementation(projects.features.home.ui)
+    implementation(projects.features.detail.ui)
 }

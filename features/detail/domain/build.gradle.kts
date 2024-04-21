@@ -2,7 +2,7 @@ plugins {
     alias(libs.plugins.ibrahimkurt.jvm.library)
 }
 
-group = "com.ibrahimkurt.features.template.domain"
+group = "com.ibrahimkurt.features.detail.domain"
 
 dependencies {
     implementation(projects.core.domain)

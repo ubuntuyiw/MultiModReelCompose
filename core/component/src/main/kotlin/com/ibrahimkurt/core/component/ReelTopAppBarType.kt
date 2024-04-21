@@ -43,7 +43,7 @@ object ReelTopAppBarType {
     @OptIn(ExperimentalMaterial3Api::class)
     @Composable
     fun ReelTopAppBar(
-        title: @Composable () -> Unit,
+        title: @Composable () -> Unit = {},
         modifier: Modifier = Modifier,
         navigationIcon: @Composable () -> Unit = {},
         actions: @Composable RowScope.() -> Unit = {},
@@ -82,16 +82,16 @@ object ReelTopAppBarType {
 @OptIn(ExperimentalMaterial3Api::class)
 @ReelPreview
 @Composable
-fun ReelTopAppBarPreview() {
+private fun ReelTopAppBarPreview() {
     MultiModReelComposeTheme {
         ReelTopAppBar(
             title = {
                 Text(text = "MultiModReelCompose")
             },
             navigationIcon = {
-                SAIconButtonType.ReelIconButton(
+                ReelIconButtonType.ReelIconButton(
                     onClick = {},
-                    colors = SAIconButtonType.reelIconButtonColor()
+                    colors = ReelIconButtonType.reelIconButtonColor()
                 ) {
                     Icon(
                         imageVector = Icons.AutoMirrored.Default.ArrowBack,
