@@ -35,7 +35,6 @@ dependencies {
     api(projects.core.common)
     debugImplementation(libs.chucker)
     releaseImplementation(libs.chuckerNoOp)
-    implementation(libs.ktor.client.okhttp)
     implementation(libs.retrofit2.kotlinx.serialization.converter)
     implementation(libs.coil)
     implementation(libs.coilSvg)
