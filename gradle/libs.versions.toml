@@ -76,8 +76,6 @@ retrofit2-kotlinx-serialization-converter = { group = "com.jakewharton.retrofit"
 kotlinx-serialization-core-jvm = { group = "org.jetbrains.kotlinx", name = "kotlinx-serialization-core-jvm", version.ref = "kotlinxSerializationCoreJvm" }
 kotlinx-serialization-json = { group = "org.jetbrains.kotlinx", name = "kotlinx-serialization-json", version.ref = "kotlinxSerializationJson" }
 
-#Ktor OkHttp
-ktor-client-okhttp = { group = "io.ktor", name = "ktor-client-okhttp", version.ref = "ktorClientOkhttp" }
 
 #Chucker
 chucker = { group = "com.github.chuckerteam.chucker", name = "library", version.ref = "library" }

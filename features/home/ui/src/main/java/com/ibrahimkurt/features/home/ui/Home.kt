@@ -1,7 +1,6 @@
 package com.ibrahimkurt.features.home.ui
 
 import androidx.compose.foundation.background
-import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
@@ -52,14 +51,16 @@ fun HomeScreen(
                 contentAlignment = Alignment.Center,
                 modifier = Modifier
                     .padding(4.dp)
-                    .clickable {
-                        homeNavActions.navigateToDetail()
-                    }
             ) {
                 FilmCard(
                     model = "https://image.tmdb.org/t/p/w500" + item.posterPath,
-                    title = item.name
-                )
+                    title = item.name,
+                    date = item.firstAirDate,
+                    voteAverage = item.voteAverage,
+                    voteAverageFormat = item.voteAverageFormat
+                ) {
+                    homeNavActions.navigateToDetail()
+                }
             }
         }
     }
