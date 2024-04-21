@@ -39,3 +39,27 @@ suspend fun <T : Any, N : Any> Resource<T>.map(data: suspend (T) -> N): Resource
         is Resource.Error -> Resource.Error(this.error)
     }
 }
+
+suspend fun <T : Any> Resource<T>.onSuccess(data: suspend (T) -> Unit): Resource<T> {
+     when (this) {
+        is Resource.Success -> data(this.data)
+        is Resource.Error -> this.error
+    }
+    return this
+}
+
+suspend fun <T : Any> Resource<T>.onFailure(failure: suspend (ErrorMessage) -> Unit): Resource<T> {
+    when (this) {
+        is Resource.Success -> this.data
+        is Resource.Error -> failure(this.error)
+    }
+    return this
+}
+
+suspend fun <T : Any> Resource<T>.onCompletion(onCompletion: suspend (T?, ErrorMessage?) -> Unit): Resource<T> {
+    when (this) {
+        is Resource.Success -> onCompletion(this.data, null)
+        is Resource.Error -> onCompletion(null, this.error)
+    }
+    return this
+}

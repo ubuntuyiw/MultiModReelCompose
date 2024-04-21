@@ -10,4 +10,5 @@ android {
 
 dependencies {
     implementation(projects.core.ui)
+    implementation(projects.features.detail.domain)
 }

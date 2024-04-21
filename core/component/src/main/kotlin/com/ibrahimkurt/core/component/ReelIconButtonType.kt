@@ -16,7 +16,7 @@ import androidx.compose.ui.graphics.Shape
 import com.ibrahimkurt.core.component.theme.MultiModReelComposeTheme
 import com.ibrahimkurt.core.component.util.Constants.EMPTY_STRING
 
-object SAIconButtonType {
+object ReelIconButtonType {
     @Composable
     fun reelIconButtonColor(
         containerColor: Color = MaterialTheme.colorScheme.primary.copy(alpha = 0.1f),
@@ -54,7 +54,7 @@ object SAIconButtonType {
 @Composable
 fun SADecrementButtonIconButtonPreview() {
     MultiModReelComposeTheme {
-        SAIconButtonType.ReelIconButton(
+        ReelIconButtonType.ReelIconButton(
             onClick = {
             }
         ) {

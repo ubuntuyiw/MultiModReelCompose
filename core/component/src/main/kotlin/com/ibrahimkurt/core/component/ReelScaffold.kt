@@ -15,7 +15,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import com.ibrahimkurt.core.component.theme.MultiModReelComposeTheme
 
-object SAScaffoldType {
+object ReelScaffoldType {
 
     @Composable
     private fun SAScaffold(
@@ -47,7 +47,7 @@ object SAScaffoldType {
     }
 
     @Composable
-    fun SAPrimaryScaffold(
+    fun PrimaryScaffold(
         modifier: Modifier = Modifier,
         topBar: @Composable () -> Unit = {},
         bottomBar: @Composable () -> Unit = {},
@@ -92,6 +92,6 @@ object SAScaffoldType {
 @Composable
 fun SAPrimaryScaffoldPreview() {
     MultiModReelComposeTheme {
-        SAScaffoldType.SAPrimaryScaffold {}
+        ReelScaffoldType.PrimaryScaffold {}
     }
 }

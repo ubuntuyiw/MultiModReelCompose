@@ -10,7 +10,7 @@ import retrofit2.Retrofit
 
 @Module
 @InstallIn(ViewModelComponent::class)
-object HomeModule {
+object HomeProvidesModule {
 
     @ViewModelScoped
     @Provides

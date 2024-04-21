@@ -11,7 +11,7 @@ val Typography = Typography(
     titleMedium = TextStyle(
         fontFamily = FontFamily(Font(R.font.worksans_bold)),
         fontSize = 16.sp,
-        lineHeight = 24.sp
+        lineHeight = 24.sp,
     ),
     bodyMedium = TextStyle(
         fontFamily = FontFamily(Font(R.font.montserrat_regular)),

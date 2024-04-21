@@ -7,8 +7,9 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.rememberNavController
-import com.features.ui.detail.detail
-import com.features.ui.detail.navigateToDetail
+import com.features.detail.ui.DetailNavActions
+import com.features.detail.ui.detail
+import com.features.detail.ui.navigateToDetail
 import com.ibrahimkurt.core.component.theme.MultiModReelComposeTheme
 import com.ibrahimkurt.features.home.ui.HomeNavActions
 import com.ibrahimkurt.features.home.ui.home
@@ -21,11 +22,17 @@ fun AppNavHost() {
             NavHost(navController = appNavHostController, startDestination = "home") {
                 home(
                     homeNavActions = HomeNavActions(
-                        navigateToDetail = appNavHostController::navigateToDetail
+                        navigateToDetail = {
+                            appNavHostController.navigateToDetail(it)
+                        }
                     )
                 )
 
-                detail()
+                detail(
+                    detailNavActions = DetailNavActions(
+                        navigateToBack = appNavHostController::navigateUp
+                    )
+                )
             }
         }
     }

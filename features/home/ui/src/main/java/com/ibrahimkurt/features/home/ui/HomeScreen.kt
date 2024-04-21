@@ -60,7 +60,7 @@ fun HomeScreen(
                     voteAverage = item.voteAverage,
                     voteAverageFormat = item.voteAverageFormat
                 ) {
-                    homeNavActions.navigateToDetail()
+                    homeNavActions.navigateToDetail(item.id)
                 }
             }
         }
