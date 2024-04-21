@@ -37,3 +37,7 @@ include(":features:home:ui")
 include(":features:home:data")
 include(":features:home:domain")
 include(":core:pagination")
+
+include("features:detail:ui")
+include("features:detail:data")
+include("features:detail:domain")
