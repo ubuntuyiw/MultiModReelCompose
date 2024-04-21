@@ -16,6 +16,7 @@ import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.paging.PagingData
 import androidx.paging.compose.LazyPagingItems
 import androidx.paging.compose.collectAsLazyPagingItems
+import com.ibrahimkurt.core.common.util.APIConst.IMAGE_URL
 import com.ibrahimkurt.core.component.ReelPreview
 import com.ibrahimkurt.core.ui.widgets.FilmCard
 import com.ibrahimkurt.features.home.domain.model.TvShow
@@ -53,7 +54,7 @@ fun HomeScreen(
                     .padding(4.dp)
             ) {
                 FilmCard(
-                    model = "https://image.tmdb.org/t/p/w500" + item.posterPath,
+                    model = IMAGE_URL + item.posterPath,
                     title = item.name,
                     date = item.firstAirDate,
                     voteAverage = item.voteAverage,

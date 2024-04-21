@@ -1,6 +1,6 @@
 package com.ibrahimkurt.core.network.intercapter
 
-import com.ibrahimkurt.core.common.util.TokenManager.token
+import com.ibrahimkurt.core.common.util.TokenConst.token
 import com.ibrahimkurt.core.network.BuildConfig
 import okhttp3.Interceptor
 import okhttp3.Response
