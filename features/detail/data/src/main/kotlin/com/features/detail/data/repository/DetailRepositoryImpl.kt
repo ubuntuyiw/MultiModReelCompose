@@ -9,7 +9,7 @@ import com.ibrahimkurt.core.common.util.map
 import com.ibrahimkurt.core.network.calladapter.toResource
 import javax.inject.Inject
 
-class DetailRepositoryImpl @Inject constructor(
+internal class DetailRepositoryImpl @Inject constructor(
     private val detailDataSource: DetailApiService
 ) : DetailRepository {
 
