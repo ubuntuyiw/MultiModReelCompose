@@ -27,7 +27,7 @@ data class TvSeriesDetailsResponse(
     val name: String? = null,
     val networks: List<Network>? = null,
     @SerialName("next_episode_to_air")
-    val nextEpisodeToAir: String? = null,
+    val nextEpisodeToAir: NextEpisodeToAir? = null,
     @SerialName("number_of_episodes")
     val numberOfEpisodes: Int? = null,
     @SerialName("number_of_seasons")

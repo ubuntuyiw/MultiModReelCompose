@@ -9,6 +9,7 @@ import androidx.compose.material3.Icon
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.ui.Modifier
 import androidx.hilt.navigation.compose.hiltViewModel
 import com.features.detail.domain.model.TvSeriesDetail
@@ -23,6 +24,15 @@ fun DetailRoute(
     viewModel: DetailViewModel = hiltViewModel(),
     detailNavActions: DetailNavActions
 ) {
+    LaunchedEffect(key1 = Unit) {
+        viewModel.snapshot.collect {
+            when (it) {
+                is DetailSnapshot.Error -> {
+                }
+            }
+        }
+    }
+
     DetailScreen(
         detailNavActions,
         viewModel.state
