@@ -31,7 +31,6 @@ fun CoilImage(
     clipToBounds: Boolean = true,
     modelEqualityDelegate: EqualityDelegate = DefaultModelEqualityDelegate,
 ) {
-
     AsyncImage(
         model = model,
         contentDescription = contentDescription,
@@ -47,9 +46,7 @@ fun CoilImage(
         clipToBounds = clipToBounds,
         modelEqualityDelegate = modelEqualityDelegate,
     )
-
 }
-
 
 @ReelPreview
 @Composable

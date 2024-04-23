@@ -60,11 +60,7 @@ fun DetailScreen(
                                 contentDescription = Constants.EMPTY_STRING,
                             )
                         }
-
-
-
                     }
-
                 }
             )
         }
