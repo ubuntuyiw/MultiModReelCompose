@@ -2,12 +2,11 @@ name: Generate Module Graphs and Commit
 
 on:
   pull_request:
-    branches: [ "master" ]
+    branches: [ "github/module-graph" ]
 
 jobs:
   build:
     runs-on: ubuntu-latest
-    if: ${{ github.event.pull_request.head.ref != 'github/module-graph' }}
     steps:
       - uses: actions/checkout@v3
         with:
@@ -26,28 +25,12 @@ jobs:
           chmod +x ./generateModuleGraphs.sh
           ./generateModuleGraphs.sh
 
-      - name: Create new branch or update it from master
-        run: |
-          if git ls-remote --heads https://github.com/ubuntuyiw/MultiModReelCompose.git github/module-graph | grep -q 'refs/heads/github/module-graph'; then
-            git fetch origin
-            git checkout github/module-graph
-            git merge origin/master
-          else
-            git checkout -b github/module-graph origin/master
-          fi
-
-      - name: Commit and Push Changes
+      - name: Commit and Push Changes to github/module-graph
         run: |
           git config --global user.email "github@actions.com"
           git config --global user.name "GitHub Actions"
           git add .
-          git commit -m "Update module graphs and READMEs" || echo "No changes to commit"
+          git commit -m "CI generated updates" || echo "No changes to commit"
           git push --set-upstream https://${{ secrets.PERSONAL_TOKEN }}@github.com/ubuntuyiw/MultiModReelCompose.git github/module-graph
         env:
           GITHUB_TOKEN: ${{ secrets.PERSONAL_TOKEN }}
-
-      - name: Upload Graphs
-        uses: actions/upload-artifact@v3
-        with:
-          name: module-graphs
-          path: docs/images/graphs/
