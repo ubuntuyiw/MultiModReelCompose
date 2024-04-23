@@ -1,5 +1,6 @@
 package com.ibrahimkurt.features.home.data.mapper
 
+import com.ibrahimkurt.core.common.util.APIConst.IMAGE_URL
 import com.ibrahimkurt.core.common.util.orZero
 import com.ibrahimkurt.features.home.data.dto.ResultDto
 import com.ibrahimkurt.features.home.domain.model.TvShow
@@ -17,7 +18,7 @@ fun List<ResultDto>?.toDomain() = this?.map {
         firstAirDate = it.firstAirDate.orEmpty(),
         genreIds = it.genreIds.orEmpty(),
         originCountry = it.originCountry.orEmpty(),
-        posterPath = it.posterPath.orEmpty(),
+        posterPath = IMAGE_URL + it.posterPath.orEmpty(),
         voteAverage = it.voteAverage?.toFloat().orZero(),
         voteAverageFormat = String.format(Locale.US, "%.1f", it.voteAverage.orZero()),
         voteCount = it.voteCount.orZero()

@@ -51,7 +51,7 @@ fun FilmCard(
     voteAverageFormat: String,
     width: Dp = 160.dp,
     contentDescription: String? = null,
-    onClick: () -> Unit,
+    onClick: () -> Unit = {},
 
     ) {
     val roundedCornerShapePx = with(LocalDensity.current) { 4.dp.toPx() }

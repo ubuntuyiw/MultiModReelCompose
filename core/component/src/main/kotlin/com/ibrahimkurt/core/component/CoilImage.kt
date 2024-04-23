@@ -50,7 +50,7 @@ fun CoilImage(
 
 @ReelPreview
 @Composable
-fun CoilImagePreview() {
+private fun CoilImagePreview() {
     CoilImage(
         model = null,
         contentDescription = null,

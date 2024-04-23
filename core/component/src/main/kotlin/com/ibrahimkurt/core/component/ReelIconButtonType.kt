@@ -19,7 +19,7 @@ import com.ibrahimkurt.core.component.util.Constants.EMPTY_STRING
 object ReelIconButtonType {
     @Composable
     fun reelIconButtonColor(
-        containerColor: Color = MaterialTheme.colorScheme.primary.copy(alpha = 0.1f),
+        containerColor: Color = MaterialTheme.colorScheme.primary.copy(alpha = 0.3f),
         contentColor: Color = MaterialTheme.colorScheme.primary,
     ): IconButtonColors = IconButtonDefaults.filledIconButtonColors(
         containerColor = containerColor,
