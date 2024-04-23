@@ -13,6 +13,7 @@ jobs:
           token: ${{ secrets.PERSONAL_TOKEN }}
           persist-credentials: true
           fetch-depth: 0
+          ref: ${{ github.head_ref }}
 
       - name: Install Graphviz
         run: sudo apt-get install graphviz
@@ -25,12 +26,16 @@ jobs:
           chmod +x ./generateModuleGraphs.sh
           ./generateModuleGraphs.sh
 
+      - name: Setup Local Branch
+        run: |
+          git checkout -B github/module-graph  # Yerelde github/module-graph dalını kontrol eder veya oluşturur
+
       - name: Commit and Push Changes to github/module-graph
         run: |
           git config --global user.email "github@actions.com"
           git config --global user.name "GitHub Actions"
           git add .
           git commit -m "CI generated updates" || echo "No changes to commit"
-          git push --set-upstream https://${{ secrets.PERSONAL_TOKEN }}@github.com/ubuntuyiw/MultiModReelCompose.git github/module-graph
+          git push --set-upstream origin github/module-graph  # Yerelde ayarlanmış dalı kullanarak push yapar
         env:
           GITHUB_TOKEN: ${{ secrets.PERSONAL_TOKEN }}
