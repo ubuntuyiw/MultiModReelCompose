@@ -33,10 +33,10 @@ import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import coil.compose.AsyncImage
 import coil.imageLoader
 import coil.request.ImageRequest
 import coil.transform.RoundedCornersTransformation
+import com.ibrahimkurt.core.component.CoilImage
 import com.ibrahimkurt.core.component.ReelPreview
 import com.ibrahimkurt.core.component.extensions.surface
 import com.ibrahimkurt.core.component.theme.MultiModReelComposeTheme
@@ -82,7 +82,7 @@ fun FilmCard(
                 )
                 .crossfade(true)
                 .build()
-            AsyncImage(
+            CoilImage(
                 model = request,
                 contentDescription = contentDescription,
                 imageLoader = imageLoader,

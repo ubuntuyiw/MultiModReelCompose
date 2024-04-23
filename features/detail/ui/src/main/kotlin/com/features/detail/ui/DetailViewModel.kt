@@ -46,11 +46,8 @@ class DetailViewModel @Inject constructor(
             state = state.copy(isLoading = false)
         }.onEach { resource ->
             resource.onSuccess {
-                Log.v("asdasd", it.toString())
-
                 state = state.copy(tvSeriesDetail = it)
             }.onFailure {
-                Log.v("asdasd", it.toString())
                 _snapshot.send(DetailSnapshot.Error(it))
             }
         }.launchIn(viewModelScope)
