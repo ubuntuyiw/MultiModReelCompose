@@ -1,7 +1,7 @@
 plugins {
     alias(libs.plugins.ibrahimkurt.android.library)
-//    alias(libs.plugins.ibrahimkurt.android.hilt)
-//    alias(libs.plugins.ibrahimkurt.android.retrofitSerialization)
+    alias(libs.plugins.ibrahimkurt.android.hilt)
+    alias(libs.plugins.ibrahimkurt.android.retrofitSerialization)
 }
 
 android {
@@ -9,5 +9,5 @@ android {
 }
 
 dependencies {
-//    implementation(projects.core.data)
+    implementation(projects.core.data)
 }

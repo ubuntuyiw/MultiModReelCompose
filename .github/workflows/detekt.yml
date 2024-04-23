@@ -7,7 +7,6 @@ on:
 jobs:
   detekt:
     runs-on: ubuntu-latest
-    if: ${{ github.event.pull_request.head.ref != 'github/module-graph' }}
     steps:
       - uses: actions/checkout@v3
 

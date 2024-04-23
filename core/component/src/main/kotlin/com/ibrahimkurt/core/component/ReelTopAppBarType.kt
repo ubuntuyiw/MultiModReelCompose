@@ -28,7 +28,7 @@ import com.ibrahimkurt.core.component.util.Constants.EMPTY_STRING
 object ReelTopAppBarType {
     @OptIn(ExperimentalMaterial3Api::class)
     @Composable
-    private fun reelColor(
+    fun reelColor(
         containerColor: Color = MaterialTheme.colorScheme.surface,
         scrolledContainerColor: Color = MaterialTheme.colorScheme.primary,
         navigationIconContentColor: Color = MaterialTheme.colorScheme.secondary,
@@ -43,8 +43,8 @@ object ReelTopAppBarType {
     @OptIn(ExperimentalMaterial3Api::class)
     @Composable
     fun ReelTopAppBar(
-        title: @Composable () -> Unit = {},
         modifier: Modifier = Modifier,
+        title: @Composable () -> Unit = {},
         navigationIcon: @Composable () -> Unit = {},
         actions: @Composable RowScope.() -> Unit = {},
         colors: TopAppBarColors = reelColor(),

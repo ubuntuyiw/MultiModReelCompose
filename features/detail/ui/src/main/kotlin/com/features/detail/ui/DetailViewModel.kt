@@ -1,6 +1,5 @@
 package com.features.detail.ui
 
-import android.util.Log
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.setValue
@@ -46,11 +45,8 @@ class DetailViewModel @Inject constructor(
             state = state.copy(isLoading = false)
         }.onEach { resource ->
             resource.onSuccess {
-                Log.v("asdasd", it.toString())
-
                 state = state.copy(tvSeriesDetail = it)
             }.onFailure {
-                Log.v("asdasd", it.toString())
                 _snapshot.send(DetailSnapshot.Error(it))
             }
         }.launchIn(viewModelScope)
