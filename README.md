@@ -8,17 +8,7 @@ Accelerate your feature development process with a ready-to-clone and customizab
 
 Dive into this guide to discover the perfect modular structure.
 
-<table>
-  <tr>
-    <td>
-      <a href="EK_BİRİNCİ_RESİM_URL">
-        <img src="https://github.com/ubuntuyiw/MultiModReelCompose/blob/develop/docs/images/screenshot/home.png" width="500" />
-      </a>
-    </td>
-    <td>
-      <a href="EK_İKİNCİ_RESİM_URL">
-        <img src="https://github.com/ubuntuyiw/MultiModReelCompose/blob/develop/docs/images/screenshot/detail.png" width="500" />
-      </a>
-    </td>
-  </tr>
-</table>
+
+| HOME                                                                                                       | DETAIL                                                                                                       |
+|------------------------------------------------------------------------------------------------------------|--------------------------------------------------------------------------------------------------------------|
+| <img src="https://github.com/ubuntuyiw/MultiModReelCompose/blob/develop/docs/images/screenshot/home.png"/> | <img src="https://github.com/ubuntuyiw/MultiModReelCompose/blob/develop/docs/images/screenshot/detail.png"/> |
