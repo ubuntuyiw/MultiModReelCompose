@@ -112,7 +112,7 @@ The notable libraries and plugins used in the MultiModReelCompose project are as
 ### Custom Plugins:
 There are also custom-defined plugins specific to the project. These are designed for specific functions and support the project's modular structure:
 
-*ibrahimkurt-android-application
+* ibrahimkurt-android-application
 * ibrahimkurt-android-hilt
 * ibrahimkurt-android-compose
 * ibrahimkurt-jvm-library
