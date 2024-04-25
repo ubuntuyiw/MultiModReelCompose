@@ -1,4 +1,4 @@
-# Movie Multi-Module Compose
+# Movie Multi-Module Compose Guideline
 
 ### Mastering Android Architecture with Multi-Module Compose
 
@@ -12,3 +12,10 @@ Dive into this guide to discover the perfect modular structure.
 | HOME                                                                                                       | DETAIL                                                                                                       |
 |------------------------------------------------------------------------------------------------------------|--------------------------------------------------------------------------------------------------------------|
 | <img src="https://github.com/ubuntuyiw/MultiModReelCompose/blob/develop/docs/images/screenshot/home.png"/> | <img src="https://github.com/ubuntuyiw/MultiModReelCompose/blob/develop/docs/images/screenshot/detail.png"/> |
+
+
+# Module Structure
+
+# :app module
+## Dependency graph
+![Dependency graph](../docs/images/graphs/dep_graph_app.svg)
