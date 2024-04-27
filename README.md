@@ -133,11 +133,37 @@ There are also custom-defined plugins specific to the project. These are designe
 ### Build Logic:
 The project uses the build-logic module to centralize and make the configuration reusable. This module contains Gradle configuration files and ensures consistent build behaviors across all modules of the project.
 
+# Creating a New Feature Module
+You can quickly and easily add new feature modules to your project using the createFeatureModule Gradle task. This task takes the module name and type as parameters, copies files from the relevant templates, and automatically updates the project configuration.
+
+### Task Usage Steps:
+
+1. Open Terminal: Open the project in the root directory.
+2. Create Module: Type the following command in your terminal to create a new module:
+```bash
+./gradlew createFeatureModule -PmoduleName=<module_name> -PmoduleType=<module_type>
+```
+* <module_name>: Choose a name for your new module.
+* <module_type>: Specify the type of module you want to create (ui, data, domain, or all).
+
+### Example:
+```bash
+./gradlew createFeatureModule -PmoduleName=profile -PmoduleType=all
+```
+In this example, a new module named "profile" will be created, and ui, data, domain modules will be added.
+
+### Final Steps:
+
+* Check Files: Verify the files of your new module under the features directory.
+* Sync Project: In Android Studio, sync the project with File > Sync Project with Gradle Files to recognize the changes.
+
+This process allows for rapid integration of new features into the project while maintaining module independence and leveraging the flexibility of modular architecture.
+
 # Additional Resources and References
 Below are several external resources to help you better understand the MultiModReelCompose project and gain in-depth knowledge about Android development. These resources can assist you in understanding how some parts of the project are structured and best practices related to Android architecture.
 
 ### Medium Article:
-* [Using Jetpack Compose and Modern Android Architecture](https://medium.com/@rahmicemreunal/817745284354) - Written by Rahmi Cemre Ünal, this article provides in-depth information about Jetpack Compose and modern Android architecture.
+* Using Jetpack Compose and Modern Android Architecture - Written by Rahmi Cemre Ünal, this article provides in-depth information about Jetpack Compose and modern Android architecture.
 
 ### GitHub Projects:
 
