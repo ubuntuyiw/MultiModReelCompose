@@ -137,7 +137,7 @@ The project uses the build-logic module to centralize and make the configuration
 Below are several external resources to help you better understand the MultiModReelCompose project and gain in-depth knowledge about Android development. These resources can assist you in understanding how some parts of the project are structured and best practices related to Android architecture.
 
 ### Medium Article:
-* [Using Jetpack Compose and Modern Android Architecture](https://medium.com/@rahmicemreunal/817745284354) - Written by Rahmi Cemre Ünal, this article provides in-depth information about Jetpack Compose and modern Android architecture.
+* Using Jetpack Compose and Modern Android Architecture - Written by Rahmi Cemre Ünal, this article provides in-depth information about Jetpack Compose and modern Android architecture.
 
 ### GitHub Projects:
 
